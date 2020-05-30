@@ -232,11 +232,12 @@ const artists = [
 // }
 // console.log(getArtistByIndex(0, artists));
   
-  /**
+  /*
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1900-2000) */
 
+// 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑=Does Not work moving on=🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑
 function get20s(botYear, topYear){
   const bYear = botYear;  //earlier year cap
   const tYear = topYear;  //later year cap
@@ -247,9 +248,10 @@ for (index in artists){
       console.log(artists[index].name);
       index++;
 }    
-  else  {}
+  else  {
     index++;
 }
+
 
 
 
@@ -265,11 +267,18 @@ for (index in artists){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
-  }
-  
-  /**
+// function removeArtist(myarray,myindex) {
+//   const array = myarray;
+//   const index = myindex;
+
+//   console.log(artists.length);
+//   array.splice(index,1);
+//   console.log(array.splice(index,1));
+//   console.log(artists.length);
+// }
+
+
+// console.log(removeArtist(artists,2));
 
 
 
@@ -286,11 +295,26 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(/* Code here */){
+// function addArtist(newID,newName,newYears,newGenre,newNationality,newBio){
+//   const id =  newID;
+//   const name = newName;
+//   const years = newYears;
+//   const genre = newGenre;
+//   const nation= newNationality;
+//   const bio = newBio;
 
-    /* Code here */
+//   artists.push({
+//   "id": id,
+//   "name" : newName,
+//   "years" : newYears,
+//   "genre" : newGenre,
+//   "nation": newNationality,
+//   "bio" : newBio});  
+//   console.log(artists);
+// };
 
-  }
+
+// console.log(addArtist(20,"Catherine","1980 - 2020","Web Dev","German","newBio newBio newBio newBio newBio newBio"));
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -303,7 +327,21 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 function lotsOfArt(/* Code here */){
 
   /* Code here */
-
+  function lotsOfArt(numP){
+    const num =numP;
+    let index = 0;
+    for (index in artists){
+      if (artists[index].paintings < num){
+          console.log(artists[index].name);
+          index++;
+    }    
+      else  {
+        index++;
+    }
+    }
+    }
+    
+    console.log(lotsOfArt(100));
 }
 
 
