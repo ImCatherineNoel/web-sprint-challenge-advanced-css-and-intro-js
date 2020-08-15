@@ -253,17 +253,21 @@ console.log(getArtistByIndex(artists, 19));
 20th century (1900-2000) 
 example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(array) {
-  let newYears = [];
-  for (i =0; i < array.length; i++) {
-    if (!array[i].years.includes("18") && array[i].years.includes("19") || array[i].years.includes("2000")){
-      newYears.push(array[i].name);
-    }
-    return newYears;
-  }
- }
- console.log(get20s(artists));
+ 
 
+const MIN_YEAR = 1900;
+const MAX_YEAR = 2000;
+
+const get20s = (data) => {
+return result = artists.filter(
+  artists => {
+    const birthYear = parseInt(artists.years.split("-")[0])
+    const deathYear = parseInt(artists.years.split("-")[1])
+    return birthYear > MIN_YEAR && deathYear < MAX_YEAR 
+    });
+}
+
+console.log(get20s(artists));
 
 
 
